@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "568560247684",
+    "project_id": "manga-d0ac1",
+    "storage_bucket": "manga-d0ac1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568560247684:android:e723106b891db2f27273d1",
+        "android_client_info": {
+          "package_name": "com.nghia.comic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568560247684-cmk7u2dtf3hg83fsm6i4tb82i0rpvshc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLQXmvomDm43GREbRaY-jsfr_5OmxY2eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568560247684-cmk7u2dtf3hg83fsm6i4tb82i0rpvshc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2300090818858871~4024748833"
+    }
+  ],
+  "configuration_version": "1"
+}

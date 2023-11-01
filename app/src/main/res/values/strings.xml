@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FireBase-Admob</string>
+    <string name="APPLICATION_ID">ca-app-pub-2300090818858871~4024748833</string>
+    <string name="APP_OPEN">ca-app-pub-2300090818858871/5387917491</string>
+    <string name="INTERSTITIAL">ca-app-pub-2300090818858871/7901699493</string>
+    <string name="INTERSTITIAL_REWARDED">ca-app-pub-2300090818858871/9507329167</string>
+    <string name="BANNER">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="REWARDED">ca-app-pub-2300090818858871/7901699493</string>
+    <string name="NATIVE_ADVANCED" />
+
+    <string name="main_activity" translatable="false">Main Activity</string>
+    <string name="main_activity_text" translatable="false">
+        Leave and switch back to the app to see the ad.
+    </string>
+    <string name="more_menu" translatable="false">More</string>
+    <string name="privacy_settings" translatable="false">Privacy Settings</string>
+    <string name="splash_activity_image_text" translatable="false">Splash Activity Image</string>
+    <string name="splash_activity_text" translatable="false">AdMob App Open Example</string>
+</resources>

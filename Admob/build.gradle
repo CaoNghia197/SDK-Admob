@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+group = 'com.github.CaoNghia197'
+version = 'v0.2.0'
+
+android {
+    namespace 'com.example.admob'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 23
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation platform('com.google.firebase:firebase-bom:32.4.0')
+    implementation 'com.google.android.gms:play-services-ads:22.4.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.6.2'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.6.2'
+    implementation 'com.google.android.ump:user-messaging-platform:2.1.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.CaoNghia197'
+                artifactId = 'SDK-Admob'
+                version = 'v0.2.0'
+            }
+        }
+    }
+}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            // Creates a Maven publication called "release".
+//            maven(MavenPublication) {
+//                artifact("build/outputs/aar/manga-release.aar") {
+//                    extension 'aar'
+//                }
+//            }
+//            release(MavenPublication) {
+//                // Applies the component for the release build variant.
+////                components.getByName('release')
+//                // You can then customize attributes of the publication as shown below.
+//                groupId = 'com.github.CaoNghia197'
+//                artifactId = 'SDK-Admob'
+//                version = 'v0.2.0'
+//            }
+//            // Creates a Maven publication called “debug”.
+//            debug(MavenPublication) {
+//                // Applies the component for the debug build variant.
+////                components.getByName('debug')
+//                groupId = 'com.github.CaoNghia197'
+//                artifactId = 'SDK-Admob'
+//                version = '0.1.0'
+//            }
+//        }
+//    }
+//}

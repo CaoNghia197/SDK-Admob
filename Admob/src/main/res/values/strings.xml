@@ -1,0 +1,9 @@
+<resources>
+    <string name="APPLICATION_ID" />
+    <string name="APP_OPEN" />
+    <string name="INTERSTITIAL" />
+    <string name="INTERSTITIAL_REWARDED" />
+    <string name="BANNER" />
+    <string name="REWARDED" />
+    <string name="NATIVE_ADVANCED" />
+</resources>
