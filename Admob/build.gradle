@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 group = 'com.github.CaoNghia197'
-version = 'v0.2.0'
+version = 'v0.1.0'
 
 android {
     namespace 'com.example.admob'
@@ -29,7 +29,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     testImplementation 'junit:junit:4.13.2'
@@ -49,10 +48,10 @@ afterEvaluate {
         publications {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
-                from components.release
+//                from components.release
                 groupId = 'com.github.CaoNghia197'
                 artifactId = 'SDK-Admob'
-                version = 'v0.2.0'
+                version = 'v0.1.0'
             }
         }
     }

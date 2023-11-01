@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "FireBase-Admod"
+rootProject.name = "SDK-Admod"
 include ':app'
 include ':Admob'
