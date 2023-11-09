@@ -21,6 +21,7 @@ import com.example.admob.app_open.AppOpenAdManager;
 import com.example.admob.banner.BannerAdManager;
 import com.example.admob.callback.OnLoadCallback;
 import com.example.admob.callback.OnShowAdCompleteListener;
+import com.example.admob.interstitial.InterstitialAdManager;
 import com.example.admob.rewarded.RewardedAdManager;
 import com.google.android.gms.ads.AdError;
 
@@ -52,13 +53,18 @@ public class App extends Application implements Application.ActivityLifecycleCal
         return (AppOpenAdManager) AdmobSDK.getInstance().getOpenApp();
     }   
     
-    public RewardedAdManager getRewardedAdManagar() {
+    public RewardedAdManager getRewardedAdManager() {
         return (RewardedAdManager) AdmobSDK.getInstance().getRewarded();
     }
 
     public BannerAdManager getBannerAds() {
         return (BannerAdManager) AdmobSDK.getInstance().getBanner();
     }
+
+    public InterstitialAdManager getInterstitialAdManager() {
+        return (InterstitialAdManager) AdmobSDK.getInstance().getInterstitial();
+    }
+
 
     public OnShowAdCompleteListener getCallback (){
         return this;
@@ -106,7 +112,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
     @Override
     public void isAdAvailable(boolean isAdAvailable) {
-        Log.d(TAG, "isAdAvailable: ");
+        Log.d(TAG, "isAdAvailable");
     }
 
     @Override

@@ -22,6 +22,7 @@ import android.os.Looper;
 import android.view.View;
 
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.lifecycle.Observer;
@@ -50,30 +51,12 @@ public class SplashActivity extends AppCompatActivity implements OnClickListener
         initViews();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        new Handler(Looper.getMainLooper()).postDelayed(() -> appOpenAdManager.showAdIfAvailable(SplashActivity.this, getApplication()),60000);
-    }
 
     private void initViews() {
         findViewById(R.id.btnLoadAdsbutton).setOnClickListener(this);
         findViewById(R.id.btnRewarded).setOnClickListener(this);
-
-        App.getInstance().getLiveData().observe(this, key -> {
-            if (key.equals(Constants.KEY_REWARDED_AD)){
-                new Handler(Looper.getMainLooper()).postDelayed(
-                    () -> App.getInstance().getRewardedAdManagar().showAds(SplashActivity.this,
-                        (OnShowAdCompleteListener) getApplication()),30000);
-            }else if (key.equals(Constants.KEY_OPEN_APP)){
-                index ++;
-                if (index == 1){
-                    App.getInstance().getAppOpenAdManager().showAds(SplashActivity.this,
-                        (OnShowAdCompleteListener) getApplication());
-                }
-
-            }
-        });
+        findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
+        App.getInstance().getLiveData().observe(this, key -> Toast.makeText(this, key, Toast.LENGTH_SHORT).show());
     }
 
 
@@ -83,7 +66,10 @@ public class SplashActivity extends AppCompatActivity implements OnClickListener
             App.getInstance().getAppOpenAdManager().showAds(SplashActivity.this,
                 (OnShowAdCompleteListener) getApplication());
         }else if(v.getId() == R.id.btnRewarded){
-            App.getInstance().getRewardedAdManagar().showAds(this,
+            App.getInstance().getRewardedAdManager().showAds(this,
+                (OnShowAdCompleteListener) getApplication());
+        }else if (v.getId() == R.id.btnInterstitialAd){
+            App.getInstance().getInterstitialAdManager().showAds(this,
                 (OnShowAdCompleteListener) getApplication());
         }
 

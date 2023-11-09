@@ -39,17 +39,6 @@
       app:layout_constraintTop_toBottomOf="@+id/splash_activity_title" />
 
   <Button
-    android:id="@+id/btnLoadAdsbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Ads Open App"
-    app:layout_constraintBottom_toTopOf="@+id/adView"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btnRewarded"
-    app:layout_constraintVertical_bias="0.126" />
-  <Button
       android:id="@+id/btnRewarded"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -60,6 +49,30 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/timer"
       app:layout_constraintVertical_bias="0.158" />
+
+  <Button
+    android:id="@+id/btnLoadAdsbutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ads Open App"
+    app:layout_constraintBottom_toTopOf="@+id/btnInterstitialAd"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btnRewarded"
+    app:layout_constraintVertical_bias="0.126" />
+
+  <Button
+    android:id="@+id/btnInterstitialAd"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="InterstitialAd"
+    app:layout_constraintBottom_toTopOf="@+id/adView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btnLoadAdsbutton"
+    app:layout_constraintVertical_bias="0.126" />
 
   <com.google.android.gms.ads.AdView
     android:id="@+id/adView"
