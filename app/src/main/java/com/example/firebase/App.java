@@ -60,9 +60,6 @@ public class App extends Application implements Application.ActivityLifecycleCal
         return (BannerAdManager) AdmobSDK.getInstance().getBanner();
     }
 
-    public OnShowAdCompleteListener getCallback (){
-        return this;
-    }
         @Override
     public void onStart(@NonNull LifecycleOwner owner) {
         DefaultLifecycleObserver.super.onStart(owner);
@@ -125,8 +122,8 @@ public class App extends Application implements Application.ActivityLifecycleCal
     }
 
     @Override
-    public void onAdLoaded(String key) {
-        liveData.setValue(key);
+    public void onAdLoaded(Object key) {
+        liveData.setValue((String) key);
     }
 
     @Override

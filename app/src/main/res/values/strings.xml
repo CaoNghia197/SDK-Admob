@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">FireBase-Admob</string>
-    <string name="APPLICATION_ID">ca-app-pub-2300090818858871~4024748833</string>
-    <string name="APP_OPEN">ca-app-pub-2300090818858871/5387917491</string>
-    <string name="INTERSTITIAL">ca-app-pub-2300090818858871/7901699493</string>
+    <string name="APPLICATION_ID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="APP_OPEN">ca-app-pub-3940256099942544/3419835294</string>
+    <string name="INTERSTITIAL">ca-app-pub-3940256099942544/3419835294</string>
     <string name="INTERSTITIAL_REWARDED">ca-app-pub-2300090818858871/9507329167</string>
-    <string name="BANNER">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="BANNER">ca-app-pub-3940256099942544/9214589741</string>
     <string name="REWARDED">ca-app-pub-2300090818858871/7901699493</string>
     <string name="NATIVE_ADVANCED" />
 

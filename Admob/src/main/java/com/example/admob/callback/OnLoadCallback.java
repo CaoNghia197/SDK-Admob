@@ -1,6 +1,6 @@
 package com.example.admob.callback;
 
 public interface OnLoadCallback {
-    void onAdLoaded(String key);
+    void onAdLoaded(Object key);
     void onAdFailedToLoad(String message);
 }

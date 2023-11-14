@@ -1,6 +1,8 @@
 
->
-java:S11856"(Remove this method to simply inherit it.(Ù«µ§
-V	java:S1258"<This block of commented-out lines of code should be removed.(ü¸âÓÿÿÿÿÿ
-A
-java:S1068+"+Remove this unused "LOG_TAG" private field.(ÒÇè¯
+s
+java:S14503"VRemove the "mAdView" field and declare it as a local variable in the relevant methods.(­üêª8é›Ùò¹1
+E
+java:S1185C"(Remove this method to simply inherit it.(Ù«µ§8ŒÓÖò¹1
+]	java:S125E"<This block of commented-out lines of code should be removed.(ü¸âÓÿÿÿÿÿ8ÓÖò¹1
+H
+java:S10681"+Remove this unused "LOG_TAG" private field.(ÒÇè¯8“ÓÖò¹1

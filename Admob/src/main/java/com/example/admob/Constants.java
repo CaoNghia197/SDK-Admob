@@ -11,6 +11,7 @@ public class Constants {
   public static final String KEY_OPEN_APP = "KEY_OPEN_APP ";
   public static final String KEY_REWARDED_AD = "KEY_REWARDED_AD ";
   public static final String KEY_INTERSTITIAL = "KEY_INTERSTITIAL ";
+  public static final String KEY_BANNER = "KEY_BANNER";
   public static final String KEY_INTERSTITIAL_REWARDED = "KEY_INTERSTITIAL_REWARDED ";
 
 }

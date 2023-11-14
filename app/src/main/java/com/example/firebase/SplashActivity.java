@@ -22,6 +22,9 @@ import android.os.Looper;
 import android.view.View;
 
 import android.view.View.OnClickListener;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.lifecycle.Observer;
@@ -34,7 +37,10 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.nghia.comic.R;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.example.bannerexample.R;
 
 /**
  * Splash Activity that inflates splash activity xml.
@@ -42,12 +48,19 @@ import com.nghia.comic.R;
 public class SplashActivity extends AppCompatActivity implements OnClickListener {
     private static final String LOG_TAG = "SplashActivity";
     private int index = 0;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         initViews();
+        loadBanner();
+    }
+
+    private void loadBanner() {
+        mAdView = findViewById(R.id.adView);
+       App.getInstance().getBannerAds().showAdsBanner(mAdView, (OnShowAdCompleteListener) getApplication());
     }
 
     @Override

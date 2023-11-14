@@ -2,9 +2,12 @@ package com.example.admob.banner;
 
 import android.app.Activity;
 import android.app.Application;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import com.example.admob.AdmobManager;
 import com.example.admob.Constants;
+import com.example.admob.callback.OnLoadCallback;
 import com.example.admob.callback.OnShowAdCompleteListener;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdSize;
@@ -14,21 +17,41 @@ import com.google.android.gms.ads.LoadAdError;
 public class BannerAdManager extends AdmobManager {
   private boolean isLoadingAd = false;
   private AdView adView;
+  private static final String TAG = "BannerAdManager";
+  private final OnLoadCallback loadCallback;
 
   public BannerAdManager(Application application) {
     super(application);
+    this.loadCallback = (OnLoadCallback) application;
   }
-
 
   @Override
   public void loadAds() {
+
+  }
+
+  @Override
+  public void showAds(Activity activity, OnShowAdCompleteListener mCallback) {
+
+  }
+
+  public void showAdsBanner(AdView addView, OnShowAdCompleteListener mCallback) {
+    if (adView  == null){
+      loadAdsBanner(addView);
+      return;
+    }
+    adView.loadAd(getAdRequest());
+  }
+
+  private void loadAdsBanner(AdView adView) {
     if (isLoadingAd){
       return;
     }
     isLoadingAd = true;
-    adView = new AdView(getApplication());
+    this.adView = adView;
     adView.setAdSize(AdSize.FULL_BANNER);
     adView.setAdUnitId(Constants.BANNER);
+    adView.loadAd(getAdRequest());
     adView.setAdListener(new AdListener() {
       @Override
       public void onAdClicked() {
@@ -44,6 +67,8 @@ public class BannerAdManager extends AdmobManager {
       @Override
       public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
         super.onAdFailedToLoad(loadAdError);
+        Log.d(TAG, "onAdFailedToLoad: " + loadAdError.getMessage());
+        Log.d(TAG, "onAdFailedToLoad: " + loadAdError);
       }
 
       @Override
@@ -55,12 +80,15 @@ public class BannerAdManager extends AdmobManager {
       public void onAdLoaded() {
         super.onAdLoaded();
         isLoadingAd = false;
+        Log.d(TAG, "Load Banner Success");
+        loadCallback.onAdLoaded(Constants.KEY_OPEN_APP);
       }
 
       @Override
       public void onAdOpened() {
         super.onAdOpened();
         isLoadingAd = false;
+        Log.d(TAG, "Show Banner Success");
       }
 
       @Override
@@ -68,14 +96,5 @@ public class BannerAdManager extends AdmobManager {
         super.onAdSwipeGestureClicked();
       }
     });
-  }
-
-  @Override
-  public void showAds(Activity activity, OnShowAdCompleteListener mCallback) {
-    if (adView  == null){
-      loadAds();
-      return;
-    }
-    adView.loadAd(getAdRequest());
   }
 }
